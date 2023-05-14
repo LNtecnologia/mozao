@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Botão Sim ou Não</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Blaka&family=Lobster+Two:ital@1&display=swap');
+
+      body {
+        background: linear-gradient(to bottom, #13cec4, #24c0df);
+        text-align: center;
+        font-family: 'Blaka', sans-serif;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+        font-family: 'Lobster Two', cursive;
+      }
+
+      button {
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 25px;
+        background-color: #202201;
+        color: #ffffff;
+        margin: 1rem;
+        cursor: pointer;
+        font-family: 'Blaka', sans-serif;
+      }
+
+      #nao.mover {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Então amor, cabaré hoje?</h1>
+    <button onclick="window.location.href='https://www.youtube.com/watch?v=0mJMW2CzTiA'">Sim</button>
+    <button id="nao" class="mover" onclick="moverBotao()">Não</button>
+
+    <script>
+      function moverBotao() {
+        var botao = document.getElementById("nao");
+        var larguraJanela = window.innerWidth;
+        var alturaJanela = window.innerHeight;
+        var novaPosicaoX = Math.random() * larguraJanela;
+        var novaPosicaoY = Math.random() * alturaJanela;
+        botao.style.left = novaPosicaoX + "px";
+        botao.style.top = novaPosicaoY + "px";
+      }
+    </script>
+  </body>
+</html>
